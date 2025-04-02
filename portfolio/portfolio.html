@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Princy Rani | AI & Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #10b981;
+            --dark: #070a13;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f9fafb;
+        }
+
+        .gradient-text {
+            background-image: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .gradient-bg {
+            background-image: linear-gradient(45deg, var(--primary), var(--secondary));
+        }
+
+        .skill-badge {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .skill-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e5e7eb;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #d1d5db;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 26px;
+            height: calc(100% - 26px);
+            width: 2px;
+            background-color: #e5e7eb;
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .active-nav::after {
+            width: 100%;
+        }
+
+        #backToTop {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div>
+                    <a href="#" class="text-2xl font-bold gradient-text">Princy Rani</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-600 hover:text-indigo-600 transition active-nav">Home</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-indigo-600 transition">About</a>
+                    <a href="#skills" class="nav-link text-gray-600 hover:text-indigo-600 transition">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-600 hover:text-indigo-600 transition">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-indigo-600 transition">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-indigo-600 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden mt-4">
+                <div class="flex flex-col space-y-4 border-t border-gray-200 pt-4">
+                    <a href="#home" class="nav-link text-gray-600 hover:text-indigo-600 transition active-nav">Home</a>
+                    <a href="#about" class="nav-link text-gray-600 hover:text-indigo-600 transition">About</a>
+                    <a href="#skills" class="nav-link text-gray-600 hover:text-indigo-600 transition">Skills</a>
+                    <a href="#projects" class="nav-link text-gray-600 hover:text-indigo-600 transition">Projects</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-indigo-600 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
+                <h6 class="text-sm font-medium text-indigo-600 mb-2">HELLO, I'M</h6>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Princy <span class="gradient-text">Rani</span></h1>
+                <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">AI & Software Engineer</h2>
+                <p class="text-lg text-gray-600 mb-8 max-w-lg">Specializing in building intelligent applications at the
+                    intersection of AI, machine learning, and web development. Passionate about creating solutions that
+                    leverage data to drive decisions.</p>
+                <div class="flex space-x-4 justify-center md:justify-start">
+                    <a href="#projects"
+                        class="gradient-bg hover:opacity-90 text-white px-6 py-3 rounded-lg font-medium transition shadow-md">
+                        View Projects
+                    </a>
+                    <a href="#contact"
+                        class="border border-indigo-600 text-indigo-600 hover:bg-indigo-50 px-6 py-3 rounded-lg font-medium transition">
+                        Contact Me
+                    </a>
+                </div>
+                <div class="mt-8 flex justify-center md:justify-start space-x-4">
+                    <a href="https://www.linkedin.com/in/princy-rani-jeggula-vincent-106b23342/" target="_blank"
+                        class="text-gray-500 hover:text-indigo-600 text-xl transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/princyjv" target="_blank"
+                        class="text-gray-500 hover:text-gray-800 text-xl transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:princyranijv1995@gmail.com"
+                        class="text-gray-500 hover:text-red-500 text-xl transition">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+33780728962" class="text-gray-500 hover:text-red-500 text-xl transition">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-4 border-white shadow-2xl">
+                        <img src="imgp.jpg" alt="Princy Rani" class="w-full h-full object-cover">
+                    </div>
+                    <div
+                        class="absolute -bottom-3 -right-3 bg-gradient-to-r from-indigo-600 to-emerald-500 text-white py-2 px-4 rounded-lg shadow-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-laptop-code mr-2"></i>
+                            <span class="font-medium">Open To Work</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h6 class="text-sm font-medium text-indigo-600 mb-2">ABOUT ME</h6>
+                <h2 class="text-3xl font-bold mb-4">Who I Am</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-emerald-500 mx-auto"></div>
+            </div>
+            <div class="flex flex-col lg:flex-row items-center gap-8">
+                <div class="lg:w-1/3">
+                    <div class="bg-white p-1 rounded-2xl shadow-md inline-block">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-xl overflow-hidden">
+                            <img src="imgp.jpg" alt="Princy Rani" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-2/3">
+                    <h3 class="text-2xl font-bold mb-6">MSc Final year student | Internship applicant</h3>
+                    <div class="prose prose-indigo max-w-none text-gray-600 mb-8">
+                        <p class="mb-4">I'm a Master's student specializing in Data Management & AI with hands-on
+                            experience in software engineering. My passion lies at the intersection of AI systems and
+                            backend development, where I can apply both my technical and analytical skills.</p>
+                        <p> Currently seeking 3 to 6 month internship opportunities starting from April 2025. I aim to
+                            contribute my expertise in Python, machine learning, and distributed systems to solve
+                            complex problems and build impactful applications.</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-indigo-100 p-3 rounded-full text-indigo-600">
+                                <i class="fas fa-graduation-cap text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Education</h4>
+                                <p class="text-gray-600">MSc in Data Management & AI</p>
+                                <p class="text-gray-500 text-sm">École d'Ingénieurs, 2024-Present</p>
+                                <p class="text-gray-600">Bachelors</p>
+                                <p class="text-gray-500 text-sm">Gnits, 2012-2016</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-indigo-100 p-3 rounded-full text-indigo-600">
+                                <i class="fas fa-briefcase text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Experience</h4>
+                                <p class="text-gray-600">Software Engineer - Backend</p>
+                                <p class="text-gray-500 text-sm">Talview (Feb 2022 - Jun 2024)</p>
+                                <p class="text-gray-600">Assisstant Software Programmer</p>
+                                <p class="text-gray-500 text-sm">Vinfosoft Solutions (Sept 2016 - Dec 2021)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact"
+                        class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition shadow-md">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h6 class="text-sm font-medium text-indigo-600 mb-2">MY SKILLS</h6>
+                <h2 class="text-3xl font-bold mb-4">Technical Expertise</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-emerald-500 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 mb-12">
+                <div
+                    class="skill-badge bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-indigo-50 rounded-full text-indigo-600">
+                        <i class="fab fa-python text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-1">Python</h4>
+                </div>
+                <div
+                    class="skill-badge bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-indigo-50 rounded-full text-indigo-600">
+                        <i class="fas fa-brain text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-1">ML/DL</h4>
+                </div>
+                <div
+                    class="skill-badge bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-indigo-50 rounded-full text-indigo-600">
+                        <i class="fas fa-database text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-1">SQL</h4>
+                </div>
+                <div
+                    class="skill-badge bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-indigo-50 rounded-full text-indigo-600">
+                        <i class="fab fa-js text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-1">JavaScript</h4>
+                </div>
+                <div
+                    class="skill-badge bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-indigo-50 rounded-full text-indigo-600">
+                        <i class="fab fa-php text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-1">PHP</h4>
+                </div>
+                <div
+                    class="skill-badge bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-indigo-50 rounded-full text-indigo-600">
+                        <i class="fab fa-docker text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-1">Docker</h4>
+                </div>
+                <div
+                    class="skill-badge bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-indigo-50 rounded-full text-indigo-600">
+                        <i class="fas fa-project-diagram text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-1">Kubernetes</h4>
+                </div>
+                <div
+                    class="skill-badge bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-indigo-50 rounded-full text-indigo-600">
+                        <i class="fab fa-node js text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-1">NodeJs</h4>
+                </div>
+                <div
+                    class="skill-badge bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-indigo-50 rounded-full text-indigo-600">
+                        <i class="fas fa-chart-line text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-1">PowerBI</h4>
+                </div>
+                <div
+                    class="skill-badge bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm hover:shadow-md">
+                    <div
+                        class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-indigo-50 rounded-full text-indigo-600">
+                        <i class="fas fa-code text-3xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-1">R</h4>
+                </div>
+            </div>
+
+            <div class="text-center mb-12">
+                <h6 class="text-sm font-medium text-indigo-600 mb-2">WORK APPROACH</h6>
+                <h2 class="text-3xl font-bold mb-4">Soft Skills</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-emerald-500 mx-auto"></div>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
+                <div class="skill-badge bg-indigo-50 text-indigo-600 px-4 py-2 rounded-lg flex items-center gap-2">
+                    <i class="fas fa-lightbulb"></i>
+                    <span class="font-medium">Problem Solving</span>
+                </div>
+                <div class="skill-badge bg-indigo-50 text-indigo-600 px-4 py-2 rounded-lg flex items-center gap-2">
+                    <i class="fas fa-users"></i>
+                    <span class="font-medium">Team Collaboration</span>
+                </div>
+                <div class="skill-badge bg-indigo-50 text-indigo-600 px-4 py-2 rounded-lg flex items-center gap-2">
+                    <i class="fas fa-comments"></i>
+                    <span class="font-medium">Communication</span>
+                </div>
+                <div class="skill-badge bg-indigo-50 text-indigo-600 px-4 py-2 rounded-lg flex items-center gap-2">
+                    <i class="fas fa-tasks"></i>
+                    <span class="font-medium">Project Management</span>
+                </div>
+                <div class="skill-badge bg-indigo-50 text-indigo-600 px-4 py-2 rounded-lg flex items-center gap-2">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span class="font-medium">Adaptability</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h6 class="text-sm font-medium text-indigo-600 mb-2">MY WORK</h6>
+                <h2 class="text-3xl font-bold mb-4">Recent Projects</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-emerald-500 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Machine Learning Project" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-indigo-600 text-white px-3 py-1 rounded-full text-xs font-medium">Machine
+                                Learning</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Multimodal Learning System</h3>
+                        <p class="text-gray-600 mb-4">Developed a model that learns from both images and their
+                            descriptions to predict image-caption pairs. Implemented and evaluated two different
+                            architectures.</p>
+
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-indigo-50 text-indigo-600 px-2 py-1 rounded-full text-xs">Python</span>
+                            <span class="bg-indigo-50 text-indigo-600 px-2 py-1 rounded-full text-xs">PyTorch</span>
+                            <span
+                                class="bg-indigo-50 text-indigo-600 px-2 py-1 rounded-full text-xs">Transformers</span>
+                            <span class="bg-indigo-50 text-indigo-600 px-2 py-1 rounded-full text-xs">NLP</span>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <a href="https://colab.research.google.com/drive/11oJWTQcBEVUKS7NmfUA8Z5V3ebKfgE4g#scrollTo=KTUr7hk3tp0-"
+                                class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center gap-2"
+                                target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Open in Colab
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1064&q=80"
+                            alt="Web Development Project" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-xs font-medium">Web
+                                Development</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Genealogy Website</h3>
+                        <p class="text-gray-600 mb-4">A full-stack web application for building and visualizing family
+                            trees with secure user authentication and relationship management.</p>
+
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-emerald-50 text-emerald-600 px-2 py-1 rounded-full text-xs">PHP</span>
+                            <span class="bg-emerald-50 text-emerald-600 px-2 py-1 rounded-full text-xs">Laravel</span>
+                            <span class="bg-emerald-50 text-emerald-600 px-2 py-1 rounded-full text-xs">MySQL</span>
+                            <span class="bg-emerald-50 text-emerald-600 px-2 py-1 rounded-full text-xs">HTML/CSS</span>
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <a href="https://github.com/princyjv/GeneologySite"
+                                class="text-emerald-600 hover:text-emerald-800 font-medium flex items-center gap-2"
+                                target="_blank">
+                                <i class="fab fa-github"></i> View Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="https://github.com/princyjv"
+                    class="inline-flex items-center gap-2 bg-gray-800 text-white px-6 py-3 rounded-full text-lg hover:bg-gray-700 transition">
+                    View More Projects <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h6 class="text-sm font-medium text-indigo-600 mb-2">GET IN TOUCH</h6>
+                <h2 class="text-3xl font-bold mb-4">Contact Information</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-indigo-500 to-emerald-500 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Contact Information -->
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-4">Reach Out to Me</h3>
+                    <p class="text-gray-600 mb-4">You can contact me through the details below.</p>
+                    <div class="space-y-4">
+                        <p class="flex items-center text-gray-600">
+                            <i class="fas fa-envelope mr-3 text-indigo-600"></i> <a href="mailto:princy@example.com"
+                                class="text-indigo-600 hover:text-indigo-800">princyranijv1995@gmail.com</a>
+                        </p>
+                        <p class="flex items-center text-gray-600">
+                            <i class="fas fa-phone-alt mr-3 text-indigo-600"></i> +33 780728962
+                        </p>
+                        <p class="flex items-center text-gray-600">
+                            <i class="fas fa-map-marker-alt mr-3 text-indigo-600"></i> Trappes, Ile-de-france
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</html>
